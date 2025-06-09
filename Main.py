@@ -1,7 +1,9 @@
-from fastapi import FastAPI, UploadFile, File
-from fastapi.responses import FileResponse
-from pydantic import BaseModel
-from pymongo import MongoClient
+from fastapi import FastAPI, UploadFile, File # criação da API, upload de CSV e definição das rotas.
+from fastapi.responses import FileResponse # Mesmo do que o de cima 
+from pydantic import BaseModel # nesse aqui na classe Evento valida os campos recebidos na criação de eventos (POST /eventos).
+from pymongo import MongoClient # Nessa biblioteca conecta ao MongoDB local e insere, busca ou exporta os dados dos eventos.
+
+# O resto é intuitivo, vcs sabem o que cada uma delas fazem 
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -15,8 +17,8 @@ from io import StringIO
 # pip install fastapi uvicorn pymongo pandas seaborn matplotlib python-multipart
 
 app = FastAPI()
-client = MongoClient("mongodb://localhost:27017")
-db = client.eventosDF
+cliente = MongoClient("mongodb://localhost:27017")
+db = cliente.eventosDF
 
 class Evento(BaseModel):
     nome: str
@@ -30,9 +32,9 @@ class Evento(BaseModel):
 # Esse aqui cadastra eventos
 
 @app.post("/eventos")
-def add_evento(evento: Evento):
+def cadastrar_evento(evento: Evento):
     db.eventos.insert_one(evento.dict())
-    return {"message": "Evento inserido com sucesso"}
+    return { " > Evento inserido com sucesso"}
 
 # Para listar cada evento
 @app.get("/eventos")
@@ -42,25 +44,25 @@ def listar_eventos():
 
 # Baixar o csv
 @app.post("/eventos/upload-csv")
-async def upload_csv(file: UploadFile = File(...)):
-    content = await file.read()
+async def baixar_csv(pasta: UploadFile = File(...)):
+    content = await pasta.read()
     df = pd.read_csv(StringIO(content.decode("utf-8")))
 
     eventos = df.to_dict(orient="records")
     db.eventos.insert_many(eventos)
-    return {"message": f"{len(eventos)} eventos inseridos com sucesso"}
+    return { f"{len(eventos)} eventos inseridos com sucesso"}
 
 # Exportar para csv, esse é para ser feito no final 
 @app.get("/eventos/exportar-csv")
 def exportar_csv():
     eventos = list(db.eventos.find({}, {"_id": 0}))
     if not eventos:
-        return {"erro": "Sem eventos para exportar"}
+        return {"erro : Não tem eventos "}
 
     df = pd.DataFrame(eventos)
-    filename = f"eventos_{uuid.uuid4()}.csv"
-    df.to_csv(filename, index=False)
-    return FileResponse(filename, media_type="text/csv", filename=filename)
+    nome_pasta = f"eventos_{uuid.uuid4()}.csv"
+    df.to_csv(nome_pasta, index=False)
+    return FileResponse(nome_pasta, media_type="text/csv", filename=nome_pasta)
 
 # Primeira geração de gráficos, pensando como teste 
 def gerar_grafico(df: pd.DataFrame, titulo: str, x: str, y: str, tipo='bar', agregador='sum'):
@@ -96,27 +98,27 @@ def gerar_grafico(df: pd.DataFrame, titulo: str, x: str, y: str, tipo='bar', agr
 def grafico_custo_por_tipo():
     eventos = list(db.eventos.find({}, {"_id": 0}))
     df = pd.DataFrame(eventos)
-    path = gerar_grafico(df, "Custo Total por Tipo de Evento", "tipo", "custo", tipo="bar", agregador="sum")
-    if not path:
-        return {"erro": "Sem dados para gerar gráfico"}
-    return FileResponse(path, media_type="image/png", filename=os.path.basename(path))
+    pasta = gerar_grafico(df, "Custo Total por Categoria de cada Evento", "tipo", "custo", tipo="bar", agregador="sum")
+    if not pasta:
+        return {"Sem dados para gerar gráfico"}
+    return FileResponse(pasta, media_type="image/png", filename=os.path.basename(pasta))
 
 
 @app.get("/graficos/eventos-por-regiao")
 def grafico_eventos_por_regiao():
     eventos = list(db.eventos.find({}, {"_id": 0}))
     df = pd.DataFrame(eventos)
-    path = gerar_grafico(df, "Quantidade de Eventos por Região", "regiao", "nome", tipo="count")
-    if not path:
-        return {"erro": "Sem dados para gerar gráfico"}
-    return FileResponse(path, media_type="image/png", filename=os.path.basename(path))
+    pasta = gerar_grafico(df, "Quantidade de Eventos por cada região de bsb", "regiao", "nome", tipo="count")
+    if not pasta:
+        return {"Sem dados para gerar gráfico"}
+    return FileResponse(pasta, media_type="image/png", filename=os.path.basename(pasta))
 
 
 @app.get("/graficos/publico-medio-por-tipo")
 def grafico_publico_medio_por_tipo():
     eventos = list(db.eventos.find({}, {"_id": 0}))
     df = pd.DataFrame(eventos)
-    path = gerar_grafico(df, "Público Médio por Tipo de Evento", "tipo", "publico_estimado", tipo="bar", agregador="mean")
-    if not path:
-        return {"erro": "Sem dados para gerar gráfico"}
-    return FileResponse(path, media_type="image/png", filename=os.path.basename(path))
+    pasta = gerar_grafico(df, "Público Médio por Categória de cada evento", "tipo", "publico_estimado", tipo="bar", agregador="mean")
+    if not pasta:
+        return {"Sem dados para gerar gráfico"}
+    return FileResponse(pasta, media_type="image/png", filename=os.path.basename(pasta))
