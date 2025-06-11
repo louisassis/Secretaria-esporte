@@ -17,7 +17,8 @@ from io import StringIO
 # pip install fastapi uvicorn pymongo pandas seaborn matplotlib python-multipart
 
 app = FastAPI()
-cliente = MongoClient("mongodb://localhost:27017")
+
+cliente = MongoClient("mongodb+srv://assisluis111:<senha>@cluster0.0ohfzwd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 db = cliente.eventosDF
 
 class Evento(BaseModel):
