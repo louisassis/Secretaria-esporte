@@ -15,11 +15,13 @@ from io import StringIO
 # Nas Bibliotecas, lembrar de fazer a configuração (instalação) de cada biblioteca
 #Comando da Instalação
 # pip install fastapi uvicorn pymongo pandas seaborn matplotlib python-multipart
+# py -m uvicorn main:app --reload --port 8080
+ #http://127.0.0.1:8080/docs#/default/cadastrar_evento_eventos_post
 
 app = FastAPI()
 
-cliente = MongoClient("mongodb+srv://assisluis111:<senha>@cluster0.0ohfzwd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-db = cliente.eventosDF
+client = MongoClient("mongodb+srv://luis:senha@cluster0.0ohfzwd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+db = client.eventosDF
 
 class Evento(BaseModel):
     nome: str
