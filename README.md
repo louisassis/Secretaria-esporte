@@ -1,132 +1,103 @@
+```markdown
+# 🚀 API de Eventos Esportivos do DF
 
-# 📊 Plataforma de Gestão e Análise de Eventos (FastAPI + MongoDB)
-
-Este projeto é uma API desenvolvida com **FastAPI** e conectada ao **MongoDB Atlas**. A plataforma permite:
-
-- Cadastrar eventos manualmente ou via upload de CSV
-- Listar e exportar eventos para CSV
-- Gerar gráficos analíticos (custo por tipo, eventos por região, público médio por categoria)
-
----
-
-## 🚀 Como rodar o projeto
-
-### 1. Clone o repositório (se aplicável)
-
-```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto
-```
-
-### 2. Crie um ambiente virtual (opcional, mas recomendado)
-
-```bash
-python -m venv venv
-source venv/bin/activate  # No Windows: venv\Scripts\activate
-```
-
-### 3. Instale as dependências
+## 1 **Instalação das Dependências**
 
 ```bash
 pip install fastapi uvicorn pymongo pandas seaborn matplotlib python-multipart
 ```
 
----
+## 2 **Configuração do MongoDB**
 
-## ⚙️ Executar o servidor
-
-```bash
-uvicorn nome_do_arquivo:app --reload
-```
-
-> Substitua `nome_do_arquivo` pelo nome real do seu script, por exemplo: `main`.
-
-A API estará disponível em: `http://127.0.0.1:8000`
-
-Você pode testar os endpoints interativamente em: `http://127.0.0.1:8000/docs`
-
----
-
-## ☁️ Conexão com MongoDB Atlas
-
-A conexão está definida da seguinte forma:
+1. Crie um cluster no [MongoDB Atlas](https://www.mongodb.com/atlas)
+2. Configure um usuário com permissões de leitura/escrita
+3. Substitua na conexão:
 
 ```python
-client = MongoClient("mongodb+srv://USUARIO:SENHA@cluster.mongodb.net/eventosDF")
+client = MongoClient(
+    "mongodb+srv://<USUARIO>:<SENHA>@cluster0.0ohfzwd.mongodb.net/eventosDF"
+    "?retryWrites=true&w=majority&appName=Cluster0"
+)
 ```
 
-> Lembre-se de substituir `USUARIO` e `SENHA` pelas credenciais reais. Você pode armazená-las com segurança usando variáveis de ambiente e a biblioteca `python-dotenv` para evitar expor senhas diretamente no código.
+## **Estrutura Principal**
 
----
-
-## 📌 Principais Endpoints
-
-### ➕ Cadastrar evento manualmente
-
-`POST /eventos`
-
-```json
-{
-  "nome": "Evento X",
-  "data": "2024-05-20",
-  "local": "Parque da Cidade",
-  "tipo": "Cultural",
-  "publico_estimado": 500,
-  "custo": 12000.50,
-  "descricao": "Descrição do evento",
-  "regiao": "Plano Piloto"
-}
+### 1. Imports Essenciais
+```python
+from fastapi import FastAPI, UploadFile, File
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+from pymongo import MongoClient
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+import uuid
+import os
 ```
 
----
+### 2. Modelo de Dados Pydantic
+```python
+class Evento(BaseModel):
+    nome: str
+    data: str
+    local: str
+    tipo: str
+    publico_estimado: int
+    custo: float
+    descricao: str
+    regiao: str
+```
 
-### 📋 Listar todos os eventos
+## 🌐 **Endpoints Principais**
 
-`GET /eventos`
+### 📝 CRUD de Eventos
+| Método | Endpoint            | Descrição                          |
+|--------|---------------------|-----------------------------------|
+| POST   | `/eventos`          | Cadastra novo evento              |
+| GET    | `/eventos`          | Lista todos os eventos            |
+| POST   | `/eventos/upload-csv` | Importa eventos via CSV          |
+| GET    | `/eventos/exportar-csv` | Exporta eventos para CSV       |
 
----
+### 📊 Endpoints de Gráficos
+```markdown
+- `GET /graficos/eventos-2semestre-2025`
+- `GET /graficos/distribuicao-eventos-por-regiao` 
+- `GET /graficos/top10-investimento`
+- `GET /graficos/top10-publico`
+```
 
-### ⬆️ Upload de CSV com eventos
+## 🖼️ **Exemplo de Gráfico Gerado**
 
-`POST /eventos/upload-csv`
+![Distribuição por Região](https://exemplo.com/grafico-regioes.png)
 
-- Enviar arquivo `.csv` com colunas correspondentes aos campos dos eventos.
+## 🚀 **Executando a API**
 
----
+```bash
+uvicorn main:app --reload
+```
 
-### ⬇️ Exportar eventos para CSV
+Acesse a documentação interativa em:
+`http://localhost:8000/docs`
 
-`GET /eventos/exportar-csv`
+## 💾 **Fluxo de Dados**
 
----
+```mermaid
+graph TD
+    A[Cliente] -->|POST/GET| B[FastAPI]
+    B -->|CRUD| C[MongoDB]
+    B -->|Processa| D[Pandas]
+    D -->|Gera| E[Gráficos Matplotlib]
+    E -->|Retorna| A
+```
 
-## 📊 Gráficos Analíticos
+## 📌 **Boas Práticas Implementadas**
 
-### 💰 Custo total por tipo de evento
+- Validação de dados com Pydantic
+- Gerenciamento seguro de arquivos temporários
+- Tratamento de erros básico
+- Documentação automática via Swagger
+- Visualizações estatísticas profissionais
 
-`GET /graficos/custo-por-tipo`
-
-### 🗺️ Quantidade de eventos por região
-
-`GET /graficos/eventos-por-regiao`
-
-### 👥 Público médio por tipo de evento
-
-`GET /graficos/publico-medio-por-tipo`
-
----
-
-## 🧼 Estrutura de Arquivo CSV esperada
-
-| nome | data | local | tipo | publico_estimado | custo | descricao | regiao |
-|------|------|-------|------|------------------|-------|-----------|--------|
-| Festa Junina | 2024-06-23 | Ceilândia | Cultural | 1500 | 8000 | Festa com quadrilha e comidas típicas | Ceilândia |
-
----
-
-## 📎 Notas Finais
-
-- Os gráficos são salvos como arquivos `.png` e retornados como resposta da API.
-- A conexão com o MongoDB deve ser protegida usando `.env` em produção.
-- Lembre-se de configurar permissões no Atlas para permitir conexões externas ao cluster.
-
+> ⚠️ **Importante**: Não exponha credenciais do MongoDB no código fonte! Use variáveis de ambiente.
+```
