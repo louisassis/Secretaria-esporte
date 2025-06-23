@@ -1,4 +1,101 @@
 nome,data,local,tipo,publico_estimado,custo,descricao,regiao
-Corrida de Rua,2025-07-01,Eixão,Corrida,1000,5000,"Corrida anual",Plano Piloto
-Campeonato de Vôlei,2025-07-05,Ginásio do Cruzeiro,Vôlei,600,3500,"Etapa regional",Cruzeiro
-Torneio de Capoeira,2025-07-10,Ceilândia,Capoeira,400,2500,"Evento cultural",Ceilândia
+Meia Maratona,2025-12-22,Parque da Cidade,Atletismo,6541,102269,Corrida beneficente com percurso de 10km no Parque da Cidade,Asa Norte
+Campeonato de Futebol,2025-08-20,Estadio Nacional Mane Garrincha,Futebol,13664,254611,Campeonato de Futebol sub-20 da Federacao de Futebol do DF no Estadio Nacional Mane Garrincha,Asa Norte
+Basquete beneficente,2025-10-16,Ginasio Poliesportivo Nilson Nelson,Basquete,13292,735941,Partida de Basquete beneficente em prol de projetos sociais no Ginasio Poliesportivo Nilson Nelson,Asa Norte
+Torneio de Tenis,2025-08-24,Complexo de Tenis do Lago Norte,Tenis,1322,14037,Torneio de Tenis amador com premiacao de trofeus no Complexo de Tenis do Lago Norte,Lago Norte
+Competicao de Natacao,2025-09-02,Centro de Alto Rendimento de Brasilia,Natacao,1925,63166,Competicao de Natacao com provas de 50m e 100m no Centro de Alto Rendimento de Brasilia,Lago Sul
+Circuito de Skate,2025-12-08,Praca do Noroeste,Skate,520,96018,Circuito de Skate de street com obstaculos urbanos no Praca do Noroeste,Noroeste
+Maratona de Ciclismo,2025-07-20,Ciclovia do Lago Sul,Ciclismo,429,37207,Maratona de Ciclismo de estrada organizada pelo Clube de Ciclismo de Brasilia no Ciclovia do Lago Sul,Lago Sul
+Campeonato de Volei,2025-07-12,Ginasio Poliesportivo do Gama,Volei,6227,196721,Campeonato de Volei mistas organizado pela Federacao de Volei do DF no Ginasio Poliesportivo do Gama,Gama
+Caminhada Ecologica,2025-09-27,Trilha Ecologica do Sudoeste,Caminhada,1207,71263,Caminhada Ecologica beneficente para limpeza de parques no Trilha Ecologica do Sudoeste,Sudoeste
+Campeonato de Rugby,2025-07-14,Estadio Serejao,Rugby,1551,31028,Campeonato de Rugby da UNB no Estadio Serejao,Taguatinga
+Campeonato de Judo,2025-07-22,Academia de Artes Marciais do Lago Sul,Judo,1237,59599,Campeonato de Judo com categorias de peso no Academia de Artes Marciais do Lago Sul,Lago Sul
+Campeonato de Jiujitsu,2025-11-07,Academia de Jiujitsu de Ceilandia,Jiu-Jitsu,207,38598,Campeonato de Jiu-Jitsu com disputa de faixas no Academia de Jiujitsu de Ceilandia,Ceilandia
+Torneio de Handebol,2025-09-22,Ginasio de Brazlandia,Handebol,4577,156093,Torneio de Handebol feminino e masculino no Ginasio de Brazlandia,Brazlandia
+Corrida de Obstaculos,2025-10-19,Parque da Cidade,Atletismo,2159,95350,Corrida beneficente com percurso de 10km no Parque da Cidade,Asa Norte
+Campeonato de Gimnastica,2025-11-19,Ginasio Poliesportivo de Samambaia,Ginastica,1986,4959,Campeonato de Ginastica Artistica no Ginasio Poliesportivo de Samambaia,Samambaia
+Campeonato de Boxe,2025-07-08,Academia de Boxe do Cruzeiro,Boxe,1830,31844,Campeonato de Boxe amador no Academia de Boxe do Cruzeiro,Cruzeiro
+Corrida Maluca,2025-12-22,Ciclovia do Lago Sul,Atletismo,3069,112004,Corrida beneficente com percurso de 10km no Ciclovia do Lago Sul,Lago Sul
+Torneio de Pingue-Pongue,2025-08-04,Quadra 111 Norte,Pingue-Pongue,1079,64918,Torneio de Pingue-Pongue em duplas no Quadra 111 Norte,Asa Norte
+Campeonato de Squash,2025-12-19,Clube Naval de Brasilia,Squash,350,97565,Campeonato de Squash por ranking local no Clube Naval de Brasilia,Paranoa
+Maratona de Patinacao,2025-07-19,Centro Cultural Planaltina,Patinacao,1150,48698,Maratona de Patinacao urbana no Centro Cultural Planaltina,Planaltina
+Campeonato de Atletismo,2025-12-12,Estadio Nacional de Brasilia,Atletismo,6291,36918,Campeonato de Atletismo com provas de pista e campo no Estadio Nacional de Brasilia,Asa Norte
+Corrida de Trilha,2025-11-09,Parque do Itiquira,Atletismo,4377,100054,Corrida beneficente com percurso de 10km no Parque do Itiquira,Planaltina
+Circuito de Triathlon,2025-07-02,Clube de Regatas do Lago Sul,Atletismo,4449,195658,"Circuito de Triathlon com Natacao, ciclismo e corrida no Clube de Regatas do Lago Sul",Lago Sul
+Competicao de Arco e Flecha,2025-08-23,Centro de Convencoes de Taguatinga,Arco e Flecha,937,37490,Competicao de Arco e Flecha com alvos moveis no Centro de Convencoes de Taguatinga,Taguatinga
+Corrida de Kart,2025-10-14,Kartodromo de Brasilia,Kart,457,75646,Corrida de Kart indoor com cronometro eletronico no Kartodromo de Brasilia,Taguatinga
+Campeonato de Esgrima,2025-07-04,Clube Naval de Brasilia,Esgrima,1764,83964,Campeonato de Esgrima com espada e florete no Clube Naval de Brasilia,Paranoa
+Campeonato de Natacao,2025-11-23,Centro de Alto Rendimento de Brasilia,Natacao,1625,44703,Competicao de Natacao com provas de 50m e 100m no Centro de Alto Rendimento de Brasilia,Lago Sul
+Torneio de Peteca,2025-08-13,Praca da Ceilandia,Peteca,493,99924,Torneio de Peteca recreativo no Praca da Ceilandia,Ceilandia
+Corrida Kids,2025-07-14,Parque da Cidade,Atletismo,1075,64554,Corrida beneficente com percurso de 10km no Parque da Cidade,Asa Norte
+Campeonato de Esportes Eletronicos,2025-10-03,Espaco Gamer do Gama,eSports,1312,75942,Campeonato de eSports com torneios de FIFA e LOL no Espaco Gamer do Gama,Gama
+Competicao de Remo,2025-08-17,Lago Paranoa,Remo,1335,96031,Competicao de Remo em equipes no Lago Paranoa,Paranoa
+Corrida Noturna,2025-08-09,Parque da Cidade,Atletismo,4597,163675,Corrida beneficente com percurso de 10km no Parque da Cidade,Asa Norte
+Campeonato de Skateboard,2025-09-20,Praca do Bosque da Cidade Tropical,Skate,722,57771,Campeonato de Skateboard vert e street no Praca do Bosque da Cidade Tropical,Lago Sul
+Partida de Futmesa,2025-10-19,Centro Recreativo de Ceilandia,Futmesa,1532,98265,Partida recreativa de Futmesa no Centro Recreativo de Ceilandia,Ceilandia
+Competicao de Volei de Praia,2025-08-22,Prainha de Brazlandia,Volei de Praia,29291,235834,Competicao de Volei de Praia com duplas no Prainha de Brazlandia,Brazlandia
+Copa Brasilia de Futebol,2025-12-20,Estadio Nacional Mane Garrincha,Futebol,18427,333419,Copa Brasilia de Futebol,Asa Norte
+Trofeu Taguatinga de Futebol,2025-12-17,Estadio Regional de Taguatinga,Futebol,12242,1123032,Trofeu Taguatinga de Futebol,Taguatinga
+Taca Gama de Futebol,2025-10-26,Estadio Bezerrrao,Futebol,22020,1368199,Taca Gama de Futebol,Gama
+Copa Ceilandia de Futebol,2025-09-06,Estadio Defele,Futebol,30846,1890277,Copa Ceilandia de Futebol,Ceilandia
+Campeonato Samambaiaense de Futebol,2025-10-12,Estadio Joaquim Domingos Roriz,Futebol,25575,874082,Campeonato Samambaiaense de Futebol,Samambaia
+Taca Sobradinho de Futebol,2025-12-10,Estadio Augustinho Lima,Futebol,50093,1084530,Taca Sobradinho de Futebol,Sobradinho
+Copa Planaltina de Futebol,2025-07-22,Estadio Adonir Guimaraes,Futebol,32197,1382888,Copa Planaltina de Futebol,Planaltina
+Copa Brazlandia de Futebol,2025-08-06,Estadio Diogao,Futebol,55486,759364,Copa Brazlandia de Futebol,Brazlandia
+Trofeu Recanto de Futebol,2025-12-26,Estadio Defele,Futebol,62705,670747,Trofeu Recanto de Futebol,Recanto das Emas
+Campeonato Sudoeste de Futebol,2025-07-09,Ginasio Poliesportivo do Sudoeste,Futebol,35733,272399,Campeonato Sudoeste de Futebol,Sudoeste
+Taca Noroeste de Futebol,2025-08-27,Praca do Noroeste,Futebol,76125,466685,Taca Noroeste de Futebol,Noroeste
+Circuito Distrital de Volei,2025-11-18,Ginasio Poliesportivo do Gama,Volei,16570,457518,Circuito Distrital de Volei,Gama
+Copa Brasilia de Volei,2025-07-28,Ginasio Poliesportivo Nilson Nelson,Volei,9952,30995,Copa Brasilia de Volei,Asa Norte
+Taca Ceilandia de Volei,2025-07-09,Ginasio de Ceilandia,Volei,14458,366182,Taca Ceilandia de Volei,Ceilandia
+Torneio Sobradinho de Volei,2025-07-26,Ginasio de Sobradinho,Volei,11457,477870,Torneio Sobradinho de Volei,Sobradinho
+Copa Samambaia de Volei,2025-07-22,Ginasio Poliesportivo de Samambaia,Volei,18210,475789,Copa Samambaia de Volei,Samambaia
+Copa Taguatinga de Volei,2025-09-27,Ginasio Poliesportivo Taguatinga,Volei,8067,480016,Copa Taguatinga de Volei,Taguatinga
+Taca Brasilia de Basquete,2025-12-20,Ginasio Poliesportivo Nilson Nelson,Basquete,57907,287921,Taca Brasilia de Basquete,Asa Norte
+Copa Lago Norte de Basquete,2025-12-13,Clube de Basquete do Lago Norte,Basquete,38366,259898,Copa Lago Norte de Basquete,Lago Norte
+Torneio Ceilandia de Basquete,2025-07-26,Ginasio de Ceilandia,Basquete,58387,752518,Torneio Ceilandia de Basquete,Ceilandia
+Trofeu Samambaia de Basquete,2025-09-16,Ginasio Poliesportivo de Samambaia,Basquete,18871,559517,Trofeu Samambaia de Basquete,Samambaia
+Copa Brasilia de Handebol,2025-09-11,Ginasio Poliesportivo Nilson Nelson,Handebol,1138,161280,Copa Brasilia de Handebol,Asa Norte
+Trofeu Gama de Handebol,2025-07-10,Ginasio Poliesportivo do Gama,Handebol,4774,297032,Trofeu Gama de Handebol,Gama
+Torneio Ceilandia de Handebol,2025-11-26,Ginasio de Ceilandia,Handebol,2074,98354,Torneio Ceilandia de Handebol,Ceilandia
+Track Festival,2025-10-24,Estadio Nacional Mane Garrincha,Atletismo,1763,237459,Track Festival no Estadio Nacional Mane Garrincha,Asa Norte
+Festival de Pista do Gama,2025-09-18,Estadio Bezerrrao,Atletismo,3040,62023,Festival de Pista do Gama no Estadio Bezerrrao,Gama
+Encontro de Atletismo de Samambaia,2025-12-23,Ginasio Poliesportivo de Samambaia,Atletismo,8724,277387,Encontro de Atletismo de Samambaia,Samambaia
+Circuito Aquatico,2025-09-21,Centro de Alto Rendimento de Brasilia,Natacao,596,49119,Circuito Aquatico no Centro de Alto Rendimento de Brasilia,Lago Sul
+Taca Lago Norte de Natacao,2025-10-08,Piscina Olimpica do Lago Norte,Natacao,1842,31738,Taca Lago Norte de Natacao,Lago Norte
+Torneio Ceilandia de Natacao,2025-12-25,Academia de Natacao de Ceilandia,Natacao,1183,89601,Torneio Ceilandia de Natacao,Ceilandia
+Grande Premio de Ciclismo,2025-07-30,Ciclovia do Lago Sul,Ciclismo,213,45853,Grande Premio de Ciclismo no Ciclovia do Lago Sul,Lago Sul
+Taca Brasilia de Mountain Bike,2025-12-25,Trilha Ecologica do Sudoeste,Ciclismo,1391,53682,Taca Brasilia de Mountain Bike,Sudoeste
+Maratona de Rua de Taguatinga,2025-11-25,Parque da Cidade,Ciclismo,753,78806,Maratona de Rua de Taguatinga no Parque da Cidade,Asa Norte
+Copa Brasilia de Judo,2025-07-20,Academia de Artes Marciais do Lago Sul,Judo,770,22651,Copa Brasilia de Judo,Lago Sul
+Trofeu Taguatinga de Judo,2025-12-15,Centro Cultural de Taguatinga,Judo,1085,73763,Trofeu Taguatinga de Judo,Taguatinga
+Desafio de Tiro com Arco,2025-08-02,Centro de Convencoes de Taguatinga,Tiro com Arco,360,56164,Desafio de Tiro com Arco no Centro de Convencoes de Taguatinga,Taguatinga
+Taca Brasilia de Arco,2025-07-10,Praca do Noroeste,Tiro com Arco,719,20860,Taca Brasilia de Arco,Noroeste
+Regata Lago Paranoa,2025-11-05,Lago Paranoa,Remo,375,63390,Regata Lago Paranoa,Paranoa
+Prova de Remo do Cruzeiro,2025-08-02,Clube de Remo do Cruzeiro,Remo,908,18738,Prova de Remo do Cruzeiro,Cruzeiro
+Copa Brasilia de Taekwondo,2025-08-01,Ginasio Poliesportivo Nilson Nelson,Taekwondo,1739,64698,Copa Brasilia de Taekwondo,Asa Norte
+Torneio de Taekwondo do Gama,2025-12-29,Ginasio Poliesportivo do Gama,Taekwondo,1231,6228,Torneio de Taekwondo do Gama,Gama
+Brasilia Grand Prix Wrestling,2025-12-11,Ginasio Poliesportivo Nilson Nelson,Wrestling,1194,53221,Brasilia Grand Prix Wrestling,Asa Norte
+Copa Ceilandia de Wrestling,2025-10-23,Ginasio de Ceilandia,Wrestling,422,26133,Copa Ceilandia de Wrestling,Ceilandia
+Open Brasilia de Badminton,2025-12-31,Complexo Poliesportivo de Sobradinho,Badminton,578,75263,Open Brasilia de Badminton,Sobradinho
+Taca Samambaia de Badminton,2025-07-29,Ginasio Poliesportivo de Samambaia,Badminton,976,17523,Taca Samambaia de Badminton,Samambaia
+Brasilia Weightlifting Cup,2025-07-04,Ginasio Poliesportivo Nilson Nelson,Levantamento de Peso,807,87276,Brasilia Weightlifting Cup,Asa Norte
+Trofeu Gama de Levantamento,2025-11-06,Ginasio Poliesportivo do Gama,Levantamento de Peso,401,39654,Trofeu Gama de Levantamento,Gama
+Copa Brasilia de Esgrima,2025-11-06,Clube Naval de Brasilia,Esgrima,1502,85613,Copa Brasilia de Esgrima,Paranoa
+Open Taguatinga de Esgrima,2025-12-12,Centro Cultural de Taguatinga,Esgrima,889,79623,Open Taguatinga de Esgrima,Taguatinga
+Festival de Ginastica Ritmica,2025-08-23,Ginasio Poliesportivo de Samambaia,Ginastica Ritmica,1827,10078,Festival de Ginastica Ritmica,Samambaia
+Corrida Solidaria,2025-07-12,Parque da Cidade,Atletismo,3228,218657,Corrida beneficente anual,Asa Norte
+Jogo da Solidariedade,2025-07-26,Estadio Bezerrao,Futebol,22448,892973,Partida beneficente de futebol,Gama
+Pedalada da Esperanca,2025-08-09,Taguaparque,Ciclismo,1840,58872,Passeio ciclistico beneficente,Taguatinga
+Nado pela Vida,2025-08-23,Lago Paranoa,Natacao,1193,93132,Travessia aquatica beneficente,Paranoa
+Basquete do Bem,2025-07-13,Ginasio de Samambaia,Basquete,17643,782060,Jogo beneficente de basquete,Samambaia
+Volei pela Inclusao,2025-09-27,Ginasio do Cave,Volei,15271,428674,Jogo beneficente de voleibol inclusivo,Guara
+Judo para Todos,2025-12-11,Centro Olimpico de Ceilandia,Judo,648,60094,Apresentacao beneficente de judo,Ceilandia
+Caminhada da Solidariedade,2025-12-25,Parque Jequitiba,Caminhada,776,83978,Caminhada beneficente comunitaria,Sobradinho
+Basquete sobre Rodas Solidario,2025-11-08,Ginasio de Planaltina,Basquete,14814,237135,Partida beneficente de basquete adaptado,Planaltina
+Tenis Solidario,2025-12-22,Clube de Tenis do Lago Sul,Tenis,507,93043,Torneio beneficente de tenis,Lago Sul
+Festival de Atletismo Solidario,2025-12-06,Centro Olimpico do Recanto das Emas,Atletismo,6534,288240,Festival beneficente de atletismo,Recanto das Emas
+Skate Solidario,2025-12-20,Parque de Aguas Claras,Skate,241,62862,Apresentacao de skate beneficente,Aguas Claras
+Beach Tennis Solidario,2025-07-18,Quadra de Beach Tennis do Lago Sul,Beach Tennis,7928,269099,Beach Tennis Solidario para criancas,Lago Sul
+Torneio interno de Beach Tennis,2025-07-05,Arena Nacao,Beach Tennis,4901,103686,Desafio Solidario de Beach Tennis,Aguas Claras
+Festival de Beach Tennis pela Vida,2025-11-15,Quadra de Beach Tennis do Clube de Campo do Gama,Beach Tennis,8988,98577,Festival de Beach Tennis pela Vida,Gama
