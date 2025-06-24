@@ -1,103 +1,80 @@
-```markdown
-# 🚀 API de Eventos Esportivos do DF
+# Guia Passo a Passo para Obter os Gráficos
 
-## 1 **Instalação das Dependências**
+Este documento descreve como configurar e executar a aplicação para gerar e baixar os gráficos de eventos.
 
-```bash
-pip install fastapi uvicorn pymongo pandas seaborn matplotlib python-multipart
-```
+## Requisitos
 
-## 2 **Configuração do MongoDB**
+- Python 3.8 ou superior
+- MongoDB Atlas (ou local) ou arquivo CSV `eventos.csv`
+- Pacotes Python:
+  - fastapi
+  - uvicorn
+  - pymongo
+  - pandas
+  - seaborn
+  - matplotlib
+  - numpy
 
-1. Crie um cluster no [MongoDB Atlas](https://www.mongodb.com/atlas)
-2. Configure um usuário com permissões de leitura/escrita
-3. Substitua na conexão:
+## Passo 1 – Obter o Código
 
-```python
-client = MongoClient(
-    "mongodb+srv://<USUARIO>:<SENHA>@cluster0.0ohfzwd.mongodb.net/eventosDF"
-    "?retryWrites=true&w=majority&appName=Cluster0"
-)
-```
-
-## **Estrutura Principal**
-
-### 1. Imports Essenciais
-```python
-from fastapi import FastAPI, UploadFile, File
-from fastapi.responses import FileResponse
-from pydantic import BaseModel
-from pymongo import MongoClient
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
-import uuid
-import os
-```
-
-### 2. Modelo de Dados Pydantic
-```python
-class Evento(BaseModel):
-    nome: str
-    data: str
-    local: str
-    tipo: str
-    publico_estimado: int
-    custo: float
-    descricao: str
-    regiao: str
-```
-
-## 🌐 **Endpoints Principais**
-
-### 📝 CRUD de Eventos
-| Método | Endpoint            | Descrição                          |
-|--------|---------------------|-----------------------------------|
-| POST   | `/eventos`          | Cadastra novo evento              |
-| GET    | `/eventos`          | Lista todos os eventos            |
-| POST   | `/eventos/upload-csv` | Importa eventos via CSV          |
-| GET    | `/eventos/exportar-csv` | Exporta eventos para CSV       |
-
-### 📊 Endpoints de Gráficos
-```markdown
-- `GET /graficos/eventos-2semestre-2025`
-- `GET /graficos/distribuicao-eventos-por-regiao` 
-- `GET /graficos/top10-investimento`
-- `GET /graficos/top10-publico`
-```
-
-## 🖼️ **Exemplo de Gráfico Gerado**
-
-![Distribuição por Região](https://exemplo.com/grafico-regioes.png)
-
-## 🚀 **Executando a API**
+Clone ou copie o arquivo `main1.py` para o seu diretório de trabalho.
 
 ```bash
-uvicorn main:app --reload
+git clone <repositório>  # se aplicável
+# ou copie manualmente main1.py
 ```
 
-Acesse a documentação interativa em:
-`http://localhost:8000/docs`
+## Passo 2 – Instalar Dependências
 
-## 💾 **Fluxo de Dados**
+No terminal, dentro da pasta do projeto:
 
-```mermaid
-graph TD
-    A[Cliente] -->|POST/GET| B[FastAPI]
-    B -->|CRUD| C[MongoDB]
-    B -->|Processa| D[Pandas]
-    D -->|Gera| E[Gráficos Matplotlib]
-    E -->|Retorna| A
+```bash
+pip install fastapi uvicorn pymongo pandas seaborn matplotlib numpy
 ```
 
-## 📌 **Boas Práticas Implementadas**
+## Passo 3 – Configurar a Conexão com o MongoDB
 
-- Validação de dados com Pydantic
-- Gerenciamento seguro de arquivos temporários
-- Tratamento de erros básico
-- Documentação automática via Swagger
-- Visualizações estatísticas profissionais
+Edite o arquivo `main1.py` (linha onde `MongoClient` é inicializado) e substitua `senha` e o nome do banco de dados pelos seus valores.
 
-> ⚠️ **Importante**: Não exponha credenciais do MongoDB no código fonte! Use variáveis de ambiente.
+Opcional: use variáveis de ambiente e `python-dotenv` para manter credenciais seguras.
+
+## Passo 4 – Iniciar a Aplicação
+
+Execute o servidor FastAPI com `uvicorn`:
+
+```bash
+uvicorn main1:app --reload
 ```
+
+O servidor ficará disponível em `http://127.0.0.1:8000`.
+
+## Passo 5 – Preparar os Dados
+
+### 5.1 Usar Banco de Dados
+
+Insira eventos via endpoints:
+- `POST /eventos` – cadastra um evento único (JSON).
+- `POST /eventos/upload-csv` – faz upload de um CSV.
+
+### 5.2 Usar CSV Local
+
+Renomeie ou copie seu CSV de eventos para `eventos.csv` na raiz do projeto.
+
+## Passo 6 – Gerar e Baixar os Gráficos
+
+Acesse no navegador ou via `curl` os seguintes endpoints:
+
+1. **Gráfico 1** – Eventos por Mês (2º Semestre 2025)  
+   `GET http://127.0.0.1:8000/graficos/eventos-2semestre-2025`
+
+2. **Gráfico 2** – Distribuição de Eventos por Região  
+   `GET http://127.0.0.1:8000/graficos/distribuicao-eventos-por-regiao`
+
+3. **Gráfico 3** – Top 10 Investimento Médio por Esporte  
+   `GET http://127.0.0.1:8000/graficos/top10-investimento`
+
+4. **Gráfico 4** – Esportes com Maior Público Total  
+   `GET http://127.0.0.1:8000/graficos/top10-publico`
+
+Cada endpoint retornará um arquivo PNG que pode ser salvo localmente.
+
